@@ -1,0 +1,8 @@
+image: "odise/busybox-curl"
+
+"Refresh packages.codebridge.nl":
+  stage: deploy
+  script:
+    - "curl -X POST -F token=cfd9c1e598006c8adfc8a6b02506e6 -F ref=master https://gitlab.com/api/v4/projects/8755918/trigger/pipeline"
+  only:
+    - "master"
